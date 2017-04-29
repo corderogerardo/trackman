@@ -1,0 +1,202 @@
+/***********CSS Login Page**********/
+
+//background Login Page
+.page-login-page {
+  background-image: linear-gradient(to right, color($colors, midBlue), color($colors, darkBlue));
+  @include display-flex;
+  @include flex-direction(column);
+  height: 100%;
+  width: 100%;
+}
+
+// Logo Containcer section and title
+.container-logo {
+  @include align-items(flex-start);
+  @include display-flex;
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  height: 80px;
+  min-height: 80px;
+  width: 100%;
+  div {
+    height: 100%;
+    width: 30%;
+    @include align-items(flex-start);
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+    .trident-logo {
+      height: 100%;
+      width: 50%;
+    }
+  }
+  //Login Page Title
+  .login-page-title {
+    @include align-items(flex-end);
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+    color: #ffffff;
+    font-size: 24px;
+    height: 100%;
+    width: 60%;
+  }
+
+}
+
+.container-for-center {
+  @include display-flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+//login inputs container
+.login-inputs {
+  @include align-items(center);
+  @include flex-direction(column);
+  @include justify-content(space-around);
+  height: 130px;
+  min-height: 130px;
+  margin-top: 18%;
+  @include margin-responsive(18% 0 0 0, 30% 0 0 0, 35% 0 0 0, 40% 0 0 0, 45% 0 0 0, 40% 0 0 0, 50% 0 0 0, 50% 0 0 0);
+  //login input email and mdp
+  .login-input {
+    height: 40%;
+    width: 80%;
+    min-height: 30px;
+    @include align-items(center);
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+    input {
+      border: none;
+      height: 100%;
+      width: 100%;
+      @include align-items(center);
+      @include display-flex;
+      @include flex-direction(row);
+      @include justify-content(center);
+    }
+    .pass-visibility {
+      position: absolute;
+      top: 0;
+      right: 2%;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 10%;
+      background-color: white;
+      @include align-items(center);
+      @include display-flex;
+      @include flex-direction(row);
+      @include justify-content(center);
+      img {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.container-remember {
+  @include align-items(center);
+  @include flex-direction(row);
+  @include justify-content(center);
+  height: 40px;
+  min-height: 40px;
+
+  div {
+    @include display-flex;
+    @include align-items(center);
+    @include flex-direction(row);
+    @include justify-content(center);
+    width: 80%;
+    .login-checkbox {
+      @include display-flex;
+      @include align-items(center);
+      @include flex-direction(row);
+      @include justify-content(center);
+      height: 100%;
+      width: 10%;
+    }
+    //Login page remember me label
+    .login-rememberMe-label {
+      @include display-flex;
+      @include align-items(center);
+      @include flex-direction(row);
+      @include justify-content(flex-start);
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      height: 100%;
+      width: 40%;
+    }
+  }
+}
+
+.login-buttons {
+  @include align-items(center);
+  @include flex-direction(row);
+  @include justify-content(space-around);
+  height: 45px;
+  width: 100%;
+  div {
+    @include display-flex;
+    @include align-items(center);
+    @include flex-direction(row);
+    @include justify-content(space-around);
+    height: 100%;
+    width: 80%;
+    .login-button {
+      height: 100%;
+      width: 45%;
+      min-height: 100%;
+      font-size: 14px;
+      .button-effect {
+        display: none;
+        position: relative;
+        border-radius: 0;
+      }
+    }
+    .signUp-button {
+      height: 100%;
+      width: 45%;
+      min-height: 100%;
+      font-size: 14px;
+      color: #FFFFFF;
+      border-width: 0.3rem;
+      .button-effect {
+        display: none;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.container-forgot {
+  color: white;
+  @include display-flex;
+  @include align-items(center);
+  @include flex-direction(row);
+  @include justify-content(center);
+  width: 100%;
+  height: 45px;
+  min-height: 45px;
+  text-align: center;
+}
+
+.container-gilson-logo {
+  @include display-flex;
+  @include align-items(center);
+  @include flex-direction(row);
+  @include justify-content(flex-end);
+  margin-top: 5%;
+  height: 45px;
+  min-height: 45px;
+  width: 100%;
+  @include margin-responsive(5% 0 0 0, 15% 0 0 0, 30% 0 0 0, 35% 0 0 0, 40% 0 0 0, 40% 0 0 0, 45% 0 0 0, 45% 0 0 0);
+  .gilson-logo {
+    height: 100%;
+    width: 50%;
+  }
+}

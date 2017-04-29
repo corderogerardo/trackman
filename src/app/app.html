@@ -1,0 +1,18 @@
+<!--Menu for pages navigation-->
+<ion-menu [content]="content" >
+    <ion-header >
+        <ion-toolbar >
+            <ion-title >{{"menu.title" | translate}}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content  class="menu-list" >
+        <ion-list >
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)"  class="menu-list">
+                <ion-icon [name]="p.icon" class="menu-icon"></ion-icon> {{p.title | translate}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<!--an ionic component :router to change pages-->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" ></ion-nav>

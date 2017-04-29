@@ -1,0 +1,55 @@
+<ion-content class="page-login-page">
+  <!--logos-->
+  <div class="container-logo">
+    <div>
+      <img class="trident-logo" alt="logo" src="assets/img/Gilson_Flag_RGB_57x77.png"/>
+    </div>
+    <!--page-title-->
+    <label class="login-page-title">
+      {{ "trackmanScreen.pageTitle" | translate }}
+    </label>
+  </div>
+
+  <!--login inputs-->
+  <ion-list class="container-for-center login-inputs">
+    <ion-item class="login-input">
+      <input type="email" [placeholder]="'loginPage.userName' | translate" item-left/>
+    </ion-item>
+
+    <ion-item class="login-input">
+      <input #pass_input type="password" [placeholder]="'loginPage.password' | translate " item-left/>
+      <button class="pass-visibility" type="button"
+              item-right (click)="showHidePassword(pass_input)">
+        <img src="assets/img/eye_crossed_78x78.png"
+             *ngIf="visible" item-right/>
+        <img src="assets/img/eye_normal_78x78.png"
+             *ngIf="!visible"
+             item-right/>
+      </button>
+
+    </ion-item>
+  </ion-list>
+
+  <!--Container for remember me checkbox and forgot password-->
+  <ion-list class="container-for-center container-remember">
+    <div>
+      <ion-checkbox class="login-checkbox"></ion-checkbox>
+      <ion-label class="login-rememberMe-label">{{ "loginPage.rememberMe" | translate }}</ion-label>
+    </div>
+  </ion-list>
+
+  <!-- Container for login/signUp buttons-->
+  <ion-list class="container-for-center login-buttons">
+    <div>
+      <button ion-button class="login-button" (click)="login()">{{ "loginPage.login" | translate }}</button>
+      <button ion-button class="signUp-button" outline>{{ "loginPage.signUp" | translate }}</button>
+    </div>
+  </ion-list>
+  <ion-list class="container-for-center container-forgot">
+    <ion-label>{{ "loginPage.forgot" | translate }}
+    </ion-label>
+  </ion-list>
+  <ion-list class="container-for-center container-gilson-logo">
+    <img class="gilson-logo" alt="logo" src="assets/img/Gilson_Logo_WHITE_178x55.png"/>
+  </ion-list>
+</ion-content>

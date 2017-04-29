@@ -1,0 +1,245 @@
+@mixin width-height($minh,$hei,$minw,$wid) {
+  min-height: $minh;
+  height: $hei;
+  min-width: $minw;
+  width: $wid;
+}
+
+@mixin resposive-width-height($minh480,$hei480,$minw480,$wid480, $minh568,$hei568,$minw568,$wid568, $minh667,$hei667,$minw667,$wid667, $minh736,$hei736,$minw736,$wid736,$minh960,$hei960,$minw960,$wid960, $minh1280,$hei1280,$minw1280,$wid1280, $minh1920,$hei1920,$minw1920,$wid1920, $minh2560,$hei2560,$minw2560,$wid2560) {
+  @media screen and (max-height: 2560px) {
+    @include width-height($minh2560, $hei2560, $minw2560, $wid2560);
+  }
+  @media screen and (max-height: 1920px) {
+    @include width-height($minh1920, $hei1920, $minw1920, $wid1920);
+  }
+  @media screen and (max-height: 1280px) {
+    @include width-height($minh1280, $hei1280, $minw1280, $wid1280);
+  }
+  @media screen and (max-height: 960px) {
+    @include width-height($minh960, $hei960, $minw960, $wid960);
+  }
+  @media screen and (max-height: 736px) {
+    @include width-height($minh736, $hei736, $minw736, $wid736);
+  }
+  @media screen and (max-height: 667px) {
+    @include width-height($minh667, $hei667, $minw667, $wid667);
+  }
+  @media screen and (max-height: 568px) {
+    @include width-height($minh568, $hei568, $minw568, $wid568);
+  }
+  @media screen and (max-height: 480px) {
+    @include width-height($minh480, $hei480, $minw480, $wid480);
+  }
+}
+
+@mixin font-size-media-queries($x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8) {
+  font-size: $x1 !important;
+  @media screen and (max-height: 2560px) {
+    font-size: $x8 !important;
+  }
+  @media screen and (max-height: 1920px) {
+    font-size: $x7 !important;
+  }
+  @media screen and (max-height: 1280px) {
+    font-size: $x6 !important;
+  }
+  @media screen and (max-height: 960px) {
+    font-size: $x5 !important;
+  }
+  @media screen and (max-height: 736px) {
+    font-size: $x4 !important;
+  }
+  @media screen and (max-height: 667px) {
+    font-size: $x3 !important;
+  }
+  @media screen and (max-height: 568px) {
+    font-size: $x2 !important;
+  }
+  @media screen and (max-height: 480px) {
+    font-size: $x1 !important;
+  }
+}
+
+@mixin margin-responsive($x1,$x2,$x3,$x4,$x5,$x6,$x7,$x8) {
+  margin: $x1 !important;
+  @media screen and (max-height: 2560px) {
+    margin: $x8 !important;
+  }
+  @media screen and (max-height: 1920px) {
+    margin: $x7 !important;
+  }
+  @media screen and (max-height: 1280px) {
+    margin: $x6 !important;
+  }
+  @media screen and (max-height: 960px) {
+    margin: $x5 !important;
+  }
+  @media screen and (max-height: 736px) {
+    margin: $x4 !important;
+  }
+  @media screen and (max-height: 667px) {
+    margin: $x3 !important;
+  }
+  @media screen and (max-height: 568px) {
+    margin: $x2 !important;
+  }
+  @media screen and (max-height: 480px) {
+    margin: $x1 !important;
+  }
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin display-inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  -webkit-box-flex: $fg;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+  // No Webkit Box fallback.
+  -webkit-flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+@mixin justify-content($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin flex-order($n) {
+  -webkit-order: $n;
+  -ms-flex-order: $n;
+  order: $n;
+  -webkit-box-ordinal-group: $n;
+}
+
+@mixin responsive-grid-break($selector, $max-width) {
+  @media (max-width: $max-width) {
+    #{$selector} {
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      .col, .col-10, .col-20, .col-25, .col-33, .col-34, .col-50, .col-66, .col-67, .col-75, .col-80, .col-90 {
+        @include flex(1);
+        margin-bottom: ($grid-padding-width * 3) / 2;
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

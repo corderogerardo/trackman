@@ -1,0 +1,27 @@
+{
+  "loginPage":
+  {
+    "userName":   "User name",
+    "password":   "Password",
+    "forgot":     "Forgot?",
+    "rememberMe": "Remember me",
+    "login":      "LOGIN",
+    "signUp":     "SIGN UP"
+  },
+
+  "menu":
+  {
+    "title":      "Menu",
+    "profile":    "Profile",
+    "settings":   "Settings",
+    "howToUse":   "How to use",
+    "accesories": "Accesories"
+  },
+
+  "trackmanScreen":
+  {
+    "title":      "trackman2",
+    "pageTitle":  "trackman2",
+    "iconTitle":  "IDENTIFICATION"
+  }
+}
